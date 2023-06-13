@@ -1,11 +1,15 @@
 public class Main {
 
-    static Entrance entrance = new Entrance();
 
     public static void main(String[] args) {
-        entrance.entrance();
-        entrance.checkGender();
-        entrance.enterCustomer();
+       Customer customer = new Customer();
+       SaunaRooms saunaRooms = new SaunaRooms();
+
+       customer.customerInfo();
+       saunaRooms.hotRoom();
+
+
+
 
     }
 }
