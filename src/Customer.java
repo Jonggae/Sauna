@@ -14,7 +14,6 @@ public class Customer {
         System.out.println("당신의 나이는 몇 살입니까? (숫자 입력)");
         this.age = sc.nextInt();
         System.out.println("당신의 현재 컨디션은 " + healthCondition + "점 입니다.");
-
     }
 
 
