@@ -2,6 +2,9 @@ import java.util.Scanner;
 
 public class SaunaRooms {
 
+    Customer customer = new Customer();
+
+
     Scanner sc = new Scanner(System.in);
 
     public void choiceRoom() {
@@ -18,6 +21,19 @@ public class SaunaRooms {
                 choiceRoom();
             }
         }
+    }
+
+    public void exitRoom() {
+        System.out.println("나가시겠습니까? 한번 더 이용할 수 있습니다.");
+        System.out.println("1. 로비로 나가기   2. 한번 더 이용하기");
+        String selectedRoom = sc.next();
+        switch (selectedRoom) {
+            case "1", "2" -> choiceRoom();
+            default -> {}
+        }
+        choiceRoom();
+
+
     }
 
     public void enterHotRoom(Customer customer) {

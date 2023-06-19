@@ -5,8 +5,9 @@ public class Main {
         Customer customer = new Customer();
         SaunaRooms saunaRooms = new SaunaRooms();
 
-        customer.customerInfo();
+//        customer.customerInfo();
         saunaRooms.choiceRoom();
+        saunaRooms.exitRoom();
 
     }
 }

@@ -16,6 +16,12 @@ public class Customer {
         System.out.println("당신의 현재 컨디션은 " + healthCondition + "점 입니다.");
     }
 
+    public int getHealthCondition() {
+        return healthCondition;
+    }
 
+    public void setHealthCondition() {
+        this.healthCondition = healthCondition;
+    }
 }
 
