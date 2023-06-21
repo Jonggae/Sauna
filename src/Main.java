@@ -7,7 +7,7 @@ public class Main {
 
 //        customer.customerInfo();
         saunaRooms.choiceRoom();
-        saunaRooms.exitRoom();
+
 
     }
 }
