@@ -23,7 +23,7 @@ public class SaunaRooms {
 
     public void exitRoom() {
         System.out.println("나가시겠습니까? 한번 더 이용할 수 있습니다.");
-        System.out.println("1. 로비로 나가기   2. 한번 더 이용하기");
+        System.out.println("1.나가기   2. 한번 더 이용하기");
         String selectedRoom = sc.next();
         switch (selectedRoom) {
             case "1", "2" -> choiceRoom();
@@ -33,11 +33,11 @@ public class SaunaRooms {
         choiceRoom();
     }
 
-    public void enterRoom(Customer customer, String roomType, int recoveryCondition)
+    public void enterRoom(Customer customer, String roomType, int recoveryCondition) // 메서드에 필요한 지역변수들?
     {
         System.out.println(roomType + " 온도의 찜질공간 입니다. 입장시 컨디션이 " + recoveryCondition + " 회복됩니다.");
-        customer.setHealthCondition(customer.getHealthCondition() + recoveryCondition);
-        customer.increaseCondition(recoveryCondition);
+        customer.setHealthCondition(customer.increaseCondition(recoveryCondition)); // Customer 의 healthCondition 세팅
+         // increaseCondition 메서드가 있어야 컨디션 값이 누적됨
         System.out.println(roomType + " 방을 이용했습니다. 당신의 현재 컨디션은 " + customer.getHealthCondition() +" 입니다.");
         System.out.println("이용이 끝났습니다.");
         choiceRoom();
