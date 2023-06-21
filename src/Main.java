@@ -6,7 +6,7 @@ public class Main {
         SaunaRooms saunaRooms = new SaunaRooms();
 
         customer.customerInfo();
-//        saunaRooms.choiceRoom();
+        saunaRooms.choiceRoom();
 
 
     }
