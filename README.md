@@ -23,7 +23,7 @@ Customer 클래스내의 customerInfo 메서드는
 # 오류들
 Customer 클레스의 cumstomerCondition()으로 healthCondition 값을 입력받았으나,
 
-SaunaRooms 클래스의 enterRoom() 메서드에 입력받은 값으 들어가지 않고있음. (자꾸 0으로 들어감)
+SaunaRooms 클래스의 enterRoom() 메서드에 입력받은 값으로 들어가지 않고있음. (자꾸 0으로 들어감)
 
 healthCondition 필드는 계속해서 변경이 되어야 하는 값이므로, static으로 선언함
 
