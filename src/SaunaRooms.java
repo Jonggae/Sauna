@@ -3,7 +3,6 @@ import java.util.Scanner;
 public class SaunaRooms {
 
     Customer customer = new Customer();
-
     Scanner sc = new Scanner(System.in);
 
     public void choiceRoom() {
@@ -33,15 +32,16 @@ public class SaunaRooms {
         choiceRoom();
     }
 
-    public void enterRoom(String roomType, int recoveryCondition) // 메서드에 필요한 지역변수들?
-    {
-        System.out.println(roomType + " 온도의 찜질공간 입니다. 입장시 컨디션이 " + recoveryCondition + " 회복됩니다.");
-        customer.setHealthCondition(customer.getHealthCondition()); // Customer 의 healthCondition 세팅
-        customer.increaseCondition(recoveryCondition);         // increaseCondition 메서드가 있어야 컨디션 값이 누적됨
-        System.out.println(roomType + " 방을 이용했습니다. 당신의 현재 컨디션은 " + customer.getHealthCondition() +" 입니다.");
-        System.out.println("이용이 끝났습니다.");
-        choiceRoom();
+    public void enterRoom(String roomType, int recoveryCondition) {
+      System.out.println(roomType + " 온도의 찜질공간 입니다. 입장시 컨디션이 " + recoveryCondition + " 회복됩니다.");
 
+        customer.increaseCondition(recoveryCondition);         // increaseCondition 메서드가 있어야 컨디션 값이 누적됨
+
+        System.out.println(roomType + " 방을 이용했습니다. 당신의 현재 컨디션은 " + Customer.healthCondition + " 입니다.");
+        System.out.println("이용이 끝났습니다.");
+
+        choiceRoom();
+    }
     }
 
 //    public void enterHotRoom(Customer customer) {
@@ -68,4 +68,4 @@ public class SaunaRooms {
 //        System.out.println("이용이 끝났습니다.");
 //        choiceRoom();
 //    }
-}
+
