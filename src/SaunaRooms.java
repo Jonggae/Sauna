@@ -34,9 +34,7 @@ public class SaunaRooms {
 
     public void enterRoom(String roomType, int recoveryCondition) {
       System.out.println(roomType + " 온도의 찜질공간 입니다. 입장시 컨디션이 " + recoveryCondition + " 회복됩니다.");
-
         customer.increaseCondition(recoveryCondition);         // increaseCondition 메서드가 있어야 컨디션 값이 누적됨
-
         System.out.println(roomType + " 방을 이용했습니다. 당신의 현재 컨디션은 " + Customer.healthCondition + " 입니다.");
         System.out.println("이용이 끝났습니다.");
 
