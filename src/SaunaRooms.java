@@ -1,13 +1,21 @@
 import java.util.Scanner;
 
 public class SaunaRooms {
-
     Customer customer = new Customer();
-    Scanner sc = new Scanner(System.in);
+    public Scanner sc = new Scanner(System.in);
+
+    public void customerCondition() {
+        System.out.println("#컨디션수치입력? (0 ~ 100점)");
+        int inputCon = sc.nextInt();
+
+        System.out.println("당신의 현재 컨디션은 " + inputCon + "점 입니다.");
+        customer.setHealthCondition(inputCon);
+        // 예외처리 하기 _ 범위 밖 숫자는 재입력
+    }
 
     public void choiceRoom() {
         System.out.println("어떤 방으로 들어갈까요?");
-        System.out.println("1. 뜨거~   2. 따뜻~   3. 추워~");
+        System.out.println("1. 뜨거운 곳   2. 따뜻한 곳   3. 추운 곳");
         String selectedRoom = sc.next();
         switch (selectedRoom) {
             case "1" -> enterRoom("뜨거운", 10);
@@ -33,37 +41,12 @@ public class SaunaRooms {
     }
 
     public void enterRoom(String roomType, int recoveryCondition) {
-      System.out.println(roomType + " 온도의 찜질공간 입니다. 입장시 컨디션이 " + recoveryCondition + " 회복됩니다.");
-        customer.increaseCondition(recoveryCondition);         // increaseCondition 메서드가 있어야 컨디션 값이 누적됨
-        System.out.println(roomType + " 방을 이용했습니다. 당신의 현재 컨디션은 " + Customer.healthCondition + " 입니다.");
-        System.out.println("이용이 끝났습니다.");
+        System.out.println(roomType + " 온도의 찜질공간 입니다. 입장시 컨디션이 " + recoveryCondition + " 회복됩니다.");
+        customer.increaseCondition(customer.getHealthCondition(), recoveryCondition);         // increaseCondition 메서드가 있어야 컨디션 값이 누적됨
 
+        System.out.println(roomType + " 방을 이용했습니다. 당신의 현재 컨디션은 " + customer.getHealthCondition() + " 입니다.");
+        System.out.println("이용이 끝났습니다.");
         choiceRoom();
     }
-    }
-
-//    public void enterHotRoom(Customer customer) {
-//        System.out.println("뜨거운 온도의 찜질공간입니다. 입장시 컨디션이 20 회복됩니다.");
-//        customer.healthCondition += 20;
-//        System.out.println("뜨거운 방을 이용했습니다. 당신이 현재 컨디션은 " + customer.healthCondition + " 입니다.");
-//        System.out.println("이용이 끝났습니다.");
-//
-//        choiceRoom();
-//    }
-//
-//    public void enterWarmRoom(Customer customer) {
-//        System.out.println("적당한 온도의 찜질공간입니다. 입장시 컨디션이 30 회복됩니다.");
-//        customer.healthCondition += 30;
-//        System.out.println("적당한 방을 이용했습니다. 당신이 현재 컨디션은 " + customer.healthCondition + " 입니다.");
-//        System.out.println("이용이 끝났습니다.");
-//        choiceRoom();
-//    }
-//
-//    public void enterColdRoom(Customer customer) {
-//        System.out.println("시원한 온도의 찜질공간입니다. 입장시 컨디션이 20 회복됩니다.");
-//        customer.healthCondition += 20;
-//        System.out.println("시원한 방을 이용했습니다. 당신이 현재 컨디션은 " + customer.healthCondition + " 입니다.");
-//        System.out.println("이용이 끝났습니다.");
-//        choiceRoom();
-//    }
+}
 
