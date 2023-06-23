@@ -1,5 +1,6 @@
 import java.util.Scanner;
 
+//현재 사용하지 않음.
 public class Entrance {
 
     String gender;
