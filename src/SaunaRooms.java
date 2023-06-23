@@ -11,7 +11,6 @@ public class SaunaRooms {
 
         System.out.println("당신의 현재 컨디션은 " + inputCon + "점 입니다.");
         customer.setHealthCondition(inputCon);
-        System.out.println(customer.getHealthCondition());
         // 예외처리 하기 _ 범위 밖 숫자는 재입력
     }
 
@@ -44,7 +43,7 @@ public class SaunaRooms {
 
     public void enterRoom(String roomType, int recoveryCondition) {
 
-      System.out.println(roomType + " 온도의 찜질공간 입니다. 입장시 컨디션이 " + recoveryCondition + " 회복됩니다.");
+        System.out.println(roomType + " 온도의 찜질공간 입니다. 입장시 컨디션이 " + recoveryCondition + " 회복됩니다.");
 
         customer.increaseCondition(customer.getHealthCondition(), recoveryCondition);         // increaseCondition 메서드가 있어야 컨디션 값이 누적됨
         System.out.println(roomType + " 방을 이용했습니다. 당신의 현재 컨디션은 " + customer.getHealthCondition() + " 입니다.");

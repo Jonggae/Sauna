@@ -33,14 +33,10 @@ public class Customer {
             System.out.println("여성은 오른쪽으로 들어가세요.");
         }
         System.out.println(age + " 살은 입장료 3000원 입니다.");
-
-
     }
 
-
-
     public void increaseCondition(int condition, int recoveryCondition) {
-        healthCondition = condition+ recoveryCondition;
+        healthCondition = condition + recoveryCondition;
     }
 }
 
