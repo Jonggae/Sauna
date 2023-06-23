@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class SaunaRooms {
-
+    Customer customer = new Customer();
     public Scanner sc = new Scanner(System.in);
 
     public void choiceRoom() {
@@ -32,7 +32,7 @@ public class SaunaRooms {
     }
 
     public void enterRoom(String roomType, int recoveryCondition) {
-        Customer customer = new Customer();
+
       System.out.println(roomType + " 온도의 찜질공간 입니다. 입장시 컨디션이 " + recoveryCondition + " 회복됩니다.");
 
         customer.increaseCondition(recoveryCondition);         // increaseCondition 메서드가 있어야 컨디션 값이 누적됨
