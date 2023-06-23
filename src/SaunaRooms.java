@@ -4,6 +4,17 @@ public class SaunaRooms {
     Customer customer = new Customer();
     public Scanner sc = new Scanner(System.in);
 
+    public void customerCondition() {
+
+        System.out.println("#컨디션수치입력? (0 ~ 100점)");
+        int inputCon = sc.nextInt();
+
+        System.out.println("당신의 현재 컨디션은 " + inputCon + "점 입니다.");
+        customer.setHealthCondition(inputCon);
+        System.out.println(customer.getHealthCondition());
+        // 예외처리 하기 _ 범위 밖 숫자는 재입력
+    }
+
     public void choiceRoom() {
         System.out.println("어떤 방으로 들어갈까요?");
         System.out.println("1. 뜨거운 곳   2. 따뜻한 곳   3. 추운 곳");
@@ -35,7 +46,7 @@ public class SaunaRooms {
 
       System.out.println(roomType + " 온도의 찜질공간 입니다. 입장시 컨디션이 " + recoveryCondition + " 회복됩니다.");
 
-        customer.increaseCondition(recoveryCondition);         // increaseCondition 메서드가 있어야 컨디션 값이 누적됨
+        customer.increaseCondition(customer.getHealthCondition(), recoveryCondition);         // increaseCondition 메서드가 있어야 컨디션 값이 누적됨
         System.out.println(roomType + " 방을 이용했습니다. 당신의 현재 컨디션은 " + customer.getHealthCondition() + " 입니다.");
         System.out.println("이용이 끝났습니다.");
 

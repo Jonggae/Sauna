@@ -19,7 +19,6 @@ public class Customer {
         this.healthCondition = healthCondition;
     }
 
-
     public void customerInfo() {
         System.out.println("당신의 성별은 무엇입니까? (남/여)");
         String gender = sc.next();
@@ -35,22 +34,13 @@ public class Customer {
         }
         System.out.println(age + " 살은 입장료 3000원 입니다.");
 
-        customerCondition();
+
     }
 
-    public void customerCondition() {
 
-        System.out.println("#컨디션수치입력? (0 ~ 100점)");
-        int inputCon = sc.nextInt();
 
-        System.out.println("당신의 현재 컨디션은 " + inputCon + "점 입니다.");
-        healthCondition = inputCon;
-        System.out.println(getHealthCondition());
-        // 예외처리 하기 _ 범위 밖 숫자는 재입력
-    }
-
-    public void increaseCondition(int recoveryCondition) {
-        healthCondition += recoveryCondition;
+    public void increaseCondition(int condition, int recoveryCondition) {
+        healthCondition = condition+ recoveryCondition;
     }
 }
 
