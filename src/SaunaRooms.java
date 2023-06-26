@@ -50,5 +50,8 @@ public class SaunaRooms {
         System.out.println(roomType + " 방을 이용했습니다. 당신의 현재 컨디션은 " + customer.getHealthCondition() + " 입니다.");
         System.out.println("이용이 끝났습니다.");
     }
+    public void recoverCondition(double recoveryCondition){
+        customer.increaseCondition(customer.getHealthCondition(),recoveryCondition);
+    }
 }
 

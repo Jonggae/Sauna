@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Customer {
-    private int healthCondition;
+    private double healthCondition;
 
     // 생성자
     public Customer() {
@@ -9,7 +9,7 @@ public class Customer {
     }
 
     //getter
-    public int getHealthCondition() {
+    public double getHealthCondition() {
         return healthCondition;
     }
 
@@ -34,7 +34,7 @@ public class Customer {
         System.out.println(age + " 살은 입장료 3000원 입니다.");
     }
 
-    public void increaseCondition(int condition, int recoveryCondition) {
+    public void increaseCondition(double condition, double recoveryCondition) {
         healthCondition = condition + recoveryCondition;
     }
 }

@@ -1,4 +1,5 @@
 public class Sauna {
+
     public void choosePlace() {
         SaunaRooms sr = new SaunaRooms();
         System.out.println("(샤워를 하고 왔다) 어디부터 가볼까?");
@@ -18,7 +19,7 @@ public class Sauna {
     public void nextAction() {
         SaunaRooms sr = new SaunaRooms();
         System.out.println("다음은 무엇을 할까요?");
-        System.out.println("1. 로비 : TV와 안마의자 \n2. 사우나 : 컨디션 회복! \n  3. 매점 : 맛있는 것을 판다");
+        System.out.println("1. 로비 : TV와 안마의자 \n2. 사우나 : 컨디션 회복! \n3. 매점 : 맛있는 것을 판다");
         int selectedNum = Main.sc.nextInt();
 
         switch (selectedNum) {
@@ -35,11 +36,24 @@ public class Sauna {
 
 
     public void lobby() {
+        SaunaRooms saunaRooms = new SaunaRooms();
+
         System.out.println("이곳은 로비 입니다. 매점과 사우나가 있습니다.");
         System.out.println("Tv를 보며 안마의자를 이용할 수 있습니다.");
         System.out.println("안마의자는 컨디션이 초당 0.5씩 회복됩니다.");
+        try {
+            for (int i = 1; i < 10; i++) {
+                Thread.sleep(500);
+
+                System.out.println(i+"분이 지납니다.");
+                saunaRooms.recoverCondition(0.5);
+                System.out.println(saunaRooms.customer.getHealthCondition());
+
+            }
+        }catch(Exception e) {
+            System.out.println(e);
         nextAction();
-    }
+    }}
 
     public void shop() {
         System.out.println("안녕하세요. 시원한 음료 한잔하세요!!");
