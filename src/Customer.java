@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
 public class Customer {
-    Scanner sc = new Scanner(System.in);
     private int healthCondition;
 
     // 생성자
@@ -21,10 +20,10 @@ public class Customer {
 
     public void customerInfo() {
         System.out.println("당신의 성별은 무엇입니까? (남/여)");
-        String gender = sc.next();
+        String gender = Main.sc.next();
         // 예외처리 하기_ "남","여" 입력외에는 재입력
         System.out.println("당신의 나이는 몇 살입니까? (숫자 입력)");
-        int age = sc.nextInt();
+        int age = Main.sc.nextInt();
         // 예외처리 하기 _ 숫자 외에는 재입력 (수치 제한은?)
 
         if (gender.equals("남")) {
